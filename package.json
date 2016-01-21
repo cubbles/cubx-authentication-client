@@ -9,6 +9,7 @@
   "main": "index.js",
   "files": [
     "index.js",
+    "bin",
     "lib",
     "LICENSE"
   ],
