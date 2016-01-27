@@ -4,8 +4,6 @@
 
 This lib is part of the Cubbles platform. Use this lib to request an 'access_token' for Client > Base -interactions.
 
-Generated using https://github.com/maurizzzio/generator-node-npm
-
 ## Install
 
 ```sh
@@ -16,7 +14,7 @@ $ npm install --save cubx-authentication-client
 
 ```js
 var cubxAuthenticationClient = require('cubx-authentication-client');
-cubxAuthenticationClient('https://<your-cubbles-base-host>/_api/auth', 'username', 'password',  function(err, access_token) {...});
+cubxAuthenticationClient('https://<your-cubbles-base-host>/_api/auth', 'store1', 'username', 'password',  function(err, access_token) {...});
 ```
 
 ## CLI
@@ -43,6 +41,9 @@ To make sure, only correctly styled and tested code will be commited, we use _pr
 On **Windows**, installing the _pre-commit_ -hook fails with a message like ```pre-commit: EPERM: operation not permitted, symlink ...```
 To create the symlink, please open a cmd 'as administrator' and run ```npm install```. Check the ```.git/hooks``` folder for the new created symlink.
   
+
+## Notes
+Project has been generated using https://github.com/maurizzzio/generator-node-npm
 
 ## License
 

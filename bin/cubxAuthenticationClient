@@ -3,16 +3,22 @@
 'use strict'
 var authenticationClient = require('../')
 var argv = require('yargs')
-  .usage('Usage: -u [url] [username] [password]')
+  .usage('Usage: -u [url] -s [stores] [username] [password]')
   .option('url', {
     alias: 'u',
     describe: 'The url of the Base instance.',
     demand: true
   })
+  .option('stores', {
+    alias: 's',
+    describe: 'A comma-separated list of stores, the request permissions for.',
+    demand: true
+  })
+  .demand(2)
   .locale('en')
   .argv
 
-authenticationClient(argv.u, argv._[ 0 ], argv._[ 1 ], function (err, access_token) {
+authenticationClient(argv.u, argv.s, argv._[ 0 ], argv._[ 1 ], function (err, access_token) {
   if (err) {
     console.error(err)
   } else {
