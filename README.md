@@ -33,9 +33,6 @@ $ cubx-authentication-client
 
 ## Contribution
 
-### Code Style
-We follow the _JavaScript Standard Style_: http://standardjs.com/
-
 ### Testing
 Currently testcases require a Cubble-Base-Instance available at http://boot2docker.me.
 Contact the author, if your have questions on how to setup a Base locally.
