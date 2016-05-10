@@ -14,11 +14,10 @@ var argv = require('yargs')
     describe: 'A comma-separated list of stores, the request permissions for.',
     demand: true
   })
-  .demand(2)
   .locale('en')
   .argv
 
-authenticationClient(argv.u, argv.s, argv._[ 0 ], argv._[ 1 ], function (err, access_token) {
+authenticationClient(argv.u, argv.s, argv._[ 0 ] || undefined, argv._[ 1 ] || undefined, function (err, access_token) {
   if (err) {
     console.error(err)
   } else {

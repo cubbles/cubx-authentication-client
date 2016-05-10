@@ -5,19 +5,23 @@
 This lib is part of the Cubbles platform. Use this lib to request an 'access_token' for Client > Base -interactions.
 
 ## Install
-
 ```sh
 $ npm install --save cubx-authentication-client
 ```
 
-## Usage
-
+## API
 ```js
 var cubxAuthenticationClient = require('cubx-authentication-client');
 cubxAuthenticationClient('https://<your-cubbles-base-host>/_api/auth', 'store1', 'username', 'password',  function(err, access_token) {...});
 ```
 
-## CLI
+## CLI - local usage
+```sh
+# usage instructions
+$ node bin/cubxAuthenticationClient
+```
+
+## CLI - global install
 ```sh
 # install
 $ npm install --global cubx-authentication-client
@@ -25,6 +29,7 @@ $ npm install --global cubx-authentication-client
 # usage instructions
 $ cubx-authentication-client
 ```
+
 
 ## Contribution
 
