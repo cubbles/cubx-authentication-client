@@ -6,4 +6,4 @@
  */
 
 /* eslint-env node */
-module.exports = require('./lib/cubx-authentication-client')
+module.exports = require('./lib/cubx-authentication-client');

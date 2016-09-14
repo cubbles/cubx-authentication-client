@@ -3,12 +3,30 @@
 var cubxAuthenticationClient = require('../');
 var test = require('tape');
 
+/**
+ * Note: Those tests require a user to be already exist (sorry for that).
+ *       You can create the user manually by adding the following as new document into the '_users' database:
+         {
+           "_id": "org.couchdb.user:cubbles",
+           "name": "cubbles",
+           "logins": {
+               "local": {
+                   "login": "cubbles"
+               }
+           },
+           "roles": [
+           ],
+           "type": "user",
+           "pasword": "simple"
+        }
+ */
+
 test('token: valid request', function (t) {
   var user, stores, pass, url;
-  url = 'http://boot2docker.me/_api/authenticate';
+  url = 'http://cubbles-base-local/_api/authenticate';
   stores = [ 'store1', 'store2' ];
   user = 'cubbles';
-  pass = 'todo';
+  pass = 'simple';
 
   cubxAuthenticationClient(url, stores, user, pass, function (err, access_token) {
     if (err) {
@@ -24,10 +42,10 @@ test('token: valid request', function (t) {
 
 test('cubxAuthenticationClient: valid request without path', function (t) {
   var user, stores, pass, url;
-  url = 'http://boot2docker.me';
+  url = 'http://cubbles-base-local';
   stores = [ 'store1' ];
   user = 'cubbles';
-  pass = 'todo';
+  pass = 'simple';
 
   cubxAuthenticationClient(url, stores, user, pass, function (err, access_token) {
     if (err) {
@@ -43,10 +61,10 @@ test('cubxAuthenticationClient: valid request without path', function (t) {
 
 test('cubxAuthenticationClient: valid request without stores', function (t) {
   var user, stores, pass, url;
-  url = 'http://boot2docker.me';
+  url = 'http://cubbles-base-local';
   stores = [];
   user = 'cubbles';
-  pass = 'todo';
+  pass = 'simple';
 
   cubxAuthenticationClient(url, stores, user, pass, function (err, access_token) {
     if (err) {
@@ -62,9 +80,9 @@ test('cubxAuthenticationClient: valid request without stores', function (t) {
 
 test('cubxAuthenticationClient: valid request with stores undefined', function (t) {
   var user, pass, url;
-  url = 'http://boot2docker.me';
+  url = 'http://cubbles-base-local';
   user = 'cubbles';
-  pass = 'todo';
+  pass = 'simple';
 
   cubxAuthenticationClient(url, undefined, user, pass, function (err, access_token) {
     if (err) {
@@ -80,10 +98,10 @@ test('cubxAuthenticationClient: valid request with stores undefined', function (
 
 test('cubxAuthenticationClient: invalid url', function (t) {
   var url, stores, user, pass;
-  url = 'http://boot2docker.me/_api/invalid';
+  url = 'http://cubbles-base-local/_api/invalid';
   stores = [];
-  user = 'todo';
-  pass = 'todo';
+  user = 'simple';
+  pass = 'simple';
 
   cubxAuthenticationClient(url, stores, user, pass, function (err, access_token) {
     if (err) {
@@ -98,9 +116,9 @@ test('cubxAuthenticationClient: invalid url', function (t) {
 
 test('cubxAuthenticationClient: invalid number of arguments', function (t) {
   var url, user, pass;
-  url = 'http://boot2docker.me/_api/invalid';
-  user = 'todo';
-  pass = 'todo';
+  url = 'http://cubbles-base-local/_api/invalid';
+  user = 'simple';
+  pass = 'simple';
 
   try {
     cubxAuthenticationClient(url, user, pass, function (err, access_token) {

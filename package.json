@@ -28,7 +28,8 @@
     "superagent": "^1.4.0",
     "promise": "^7.0.4",
     "inquirer": "^1.0.2",
-    "url-join": "^0.0.1"
+    "url-join": "^0.0.1",
+    "superagent-proxy": "^1.0.1"
   },
   "devDependencies": {
     "coveralls": "^2.11.2",
