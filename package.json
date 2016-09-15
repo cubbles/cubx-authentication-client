@@ -1,6 +1,6 @@
 {
   "name": "cubx-authentication-client",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "request a token for client-base-interactions",
   "homepage": "https://github.com/cubbles/cubx-authentication-client#readme",
   "bugs": "https://github.com/cubbles/cubx-authentication-client/issues",
