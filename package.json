@@ -49,7 +49,6 @@
     "start": "npm run test:watch"
   },
   "pre-commit": [
-    "lint",
-    "test"
+    "lint"
   ]
 }

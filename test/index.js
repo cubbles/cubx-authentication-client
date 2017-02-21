@@ -28,14 +28,14 @@ test('token: valid request', function (t) {
   user = 'cubbles';
   pass = 'simple';
 
-  cubxAuthenticationClient(url, stores, user, pass, function (err, access_token) {
+  cubxAuthenticationClient(url, stores, user, pass, function (err, accessToken) {
     if (err) {
       t.fail(err);
       t.end();
       return;
     }
     // console.log(success);
-    t.ok(access_token.match(/\./ig).length === 2, 'expecting to find two dots within the token');
+    t.ok(accessToken.match(/\./ig).length === 2, 'expecting to find two dots within the token');
     t.end();
   });
 });
@@ -47,14 +47,14 @@ test('cubxAuthenticationClient: valid request without path', function (t) {
   user = 'cubbles';
   pass = 'simple';
 
-  cubxAuthenticationClient(url, stores, user, pass, function (err, access_token) {
+  cubxAuthenticationClient(url, stores, user, pass, function (err, accessToken) {
     if (err) {
       t.fail(err);
       t.end();
       return;
     }
     // console.log(success);
-    t.ok(access_token.match(/\./ig).length === 2, 'expecting to find two dots within the token');
+    t.ok(accessToken.match(/\./ig).length === 2, 'expecting to find two dots within the token');
     t.end();
   });
 });
@@ -66,14 +66,14 @@ test('cubxAuthenticationClient: valid request without stores', function (t) {
   user = 'cubbles';
   pass = 'simple';
 
-  cubxAuthenticationClient(url, stores, user, pass, function (err, access_token) {
+  cubxAuthenticationClient(url, stores, user, pass, function (err, accessToken) {
     if (err) {
       t.fail(err);
       t.end();
       return;
     }
     // console.log(success);
-    t.ok(access_token.match(/\./ig).length === 2, 'expecting to find two dots within the token');
+    t.ok(accessToken.match(/\./ig).length === 2, 'expecting to find two dots within the token');
     t.end();
   });
 });
@@ -84,14 +84,14 @@ test('cubxAuthenticationClient: valid request with stores undefined', function (
   user = 'cubbles';
   pass = 'simple';
 
-  cubxAuthenticationClient(url, undefined, user, pass, function (err, access_token) {
+  cubxAuthenticationClient(url, undefined, user, pass, function (err, accessToken) {
     if (err) {
       t.fail(err);
       t.end();
       return;
     }
     // console.log(success);
-    t.ok(access_token.match(/\./ig).length === 2, 'expecting to find two dots within the token');
+    t.ok(accessToken.match(/\./ig).length === 2, 'expecting to find two dots within the token');
     t.end();
   });
 });
@@ -103,13 +103,13 @@ test('cubxAuthenticationClient: invalid url', function (t) {
   user = 'simple';
   pass = 'simple';
 
-  cubxAuthenticationClient(url, stores, user, pass, function (err, access_token) {
+  cubxAuthenticationClient(url, stores, user, pass, function (err, accessToken) {
     if (err) {
       t.ok(err, 'Expected the request to be failed');
       t.end();
       return;
     }
-    t.fail(access_token, 'Expected the request to be failed');
+    t.fail(accessToken, 'Expected the request to be failed');
     t.end();
   });
 });
@@ -121,11 +121,11 @@ test('cubxAuthenticationClient: invalid number of arguments', function (t) {
   pass = 'simple';
 
   try {
-    cubxAuthenticationClient(url, user, pass, function (err, access_token) {
+    cubxAuthenticationClient(url, user, pass, function (err, accessToken) {
       if (err) {
         t.fail(err, 'Expected another error.');
       } else {
-        t.fail(access_token, 'Expected another error.');
+        t.fail(accessToken, 'Expected another error.');
       }
       t.end();
     });
