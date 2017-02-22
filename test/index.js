@@ -17,7 +17,7 @@ var test = require('tape');
            "roles": [
            ],
            "type": "user",
-           "pasword": "simple"
+           "password": "simple"
         }
  */
 
